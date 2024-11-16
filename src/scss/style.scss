@@ -1,0 +1,11 @@
+@use '_variable' as var;
+@use '_mixin' as mix;
+@use '_reset';
+
+body {
+    color: var(--black-color);
+    font-size: 16px;
+    font-family: "Noto Sans JP", sans-serif;
+    line-height: 1.8;
+    letter-spacing: 0.1em;
+  }
