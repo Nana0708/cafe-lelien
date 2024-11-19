@@ -165,7 +165,7 @@ svg {
 body {
   color: var(--black-color);
   font-size: 16px;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: "Noto Serif JP", "Times New Roman", "Georgia", serif;
   line-height: 1.8;
   letter-spacing: 0.1em;
 }/*# sourceMappingURL=style.css.map */
