@@ -40,6 +40,33 @@ body {
 
 
 // ********* header ********* //
+.l_header {
+    height: 72px;
+    width: 100%;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: var.$zIndexHeader;
+
+    &-logo {
+        height: 100%;
+    }
+
+    &-nav {
+        // opacity: 0;
+
+        &_list {
+            flex-direction: column;
+            gap: 48px;
+            font-weight: bold;
+        }
+    }
+}
+
 // ********* footer ********* //
 
 
@@ -106,6 +133,37 @@ body {
 
 
 // -------------- menu --------------//
+.m_hamburger {
+    width: 39px;
+    height: 26px;
+    position: relative;
+
+    &-bar {
+        width: 100%;
+        height: 2px;
+        background: var.$primaryColor;
+        position: absolute;
+
+        &:first-child {
+            top: 0;
+            transform: translate(-50% ,0);
+
+        }
+
+        &:nth-child(2) {
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &:last-child {
+            top: 100%;
+            transform: translate(-50%, -100%);
+        }
+    }
+
+
+}
+
 .menu_section_title {
     color: var.$primaryColor;
     font-size: 24px;
