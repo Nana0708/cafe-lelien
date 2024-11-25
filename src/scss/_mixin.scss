@@ -5,8 +5,8 @@ $xl: 1200px;
 
 
 @mixin mq($bp) {
-    @media (min-width: ($bp)){
-       @content; 
+    @media (min-width: $bp){
+       @content;
     }
 }
 
