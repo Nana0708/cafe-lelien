@@ -69,6 +69,7 @@ body {
             align-items: center;
             height: 100%;
             font-size: 20px;
+            font-weight: bold;
         }
     }
 }
@@ -78,6 +79,7 @@ body {
 .l_footer {
     background: var.$primaryColor;
     margin: 0 auto;
+    padding: 64px 0;
 
 &-logo__img--wrapper {
     width: 200px;
@@ -96,6 +98,7 @@ body {
         align-items: center;
         height: 100%;
         color: var.$whiteColor;
+        font-weight: bold;
     }
 }
 
@@ -344,11 +347,88 @@ body {
     }
 }
 // ********* top_access ********* //
-.top_access__wrapper {
+.top_access {
+    background: var.$whiteColor02;
+
+    &__wrapper {
+        margin-top: 48px;
+    }
+
+    &__map--container {
+        width: 343px;
+        height: 252px;
+    
+        & iframe {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__contents {
+        margin-top: 32px;
+    }
+
+    &__logo-img {
+        max-width: 100%;
+        height: auto;
+
+        &--wrapper {
+            width: 157px;
+            height: 61px;
+            margin: 0px auto;
+        }
+    }
+    &__table {
+        width: 100%;
+
+    }
+
+    &__tr-icon {
+        width: 20px;
+        height: 20px;
+        vertical-align: top;
+
+        &--img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    &__td-date {
+        font-size: 14px;
+        padding-left: 24px;
+
+        &--small {
+            font-size: 12px;
+        }
+    }
+
+}
+
+
+// ********* top_contact ********* //
+.top_contact__wrapper {
     margin-top: 48px;
 }
 
-// ********* top_contact ********* //
+.top_contact_btn__arrow {
+    position: relative;
+
+ &::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 6px;
+    border-right: 1px solid var.$whiteColor;
+    border-bottom: 1px solid var.$whiteColor;
+    position: absolute;
+    top: 50%; // m_btn__moreの中央基準
+    right: 16px; // m_btn__moreの右端からの距離
+    transform: translateY(-50%) skew(45deg) ;
+    transition: 0.3s all;
+}}
+
+
 
 
 // -------------- menu --------------//
