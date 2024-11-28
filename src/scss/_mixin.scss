@@ -1,11 +1,11 @@
 
 $md: 768px;
-$lg: 1080px;
+$bp: 1080px;
 $xl: 1200px;
 
 
 @mixin mq($bp) {
-    @media (min-width: $bp){
+    @media (min-width: ($bp)){
        @content;
     }
 }

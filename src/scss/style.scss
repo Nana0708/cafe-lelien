@@ -5,7 +5,7 @@
 // -------------- base --------------//
 
 body {
-    color: var(--black-color);
+    color: var.$blackColor;
     font-size: 16px;
     font-family: "Noto Serif JP", "Times New Roman", "Georgia", serif;
     line-height: 1.8;
@@ -115,15 +115,12 @@ body {
 }
 }
 
-
 // -------------- utility --------------//
 // -------------- module 使いまわしができるパーツ --------------//
 .m_hamburger {
     width: 39px;
     height: 26px;
     position: relative;
-
-
 
     &-bar {
         width: 100%;
@@ -150,7 +147,70 @@ body {
 }
 
 
-.top_section_title {
+
+
+.m_btn {
+    width: 297px;
+    height: 45px;
+    margin: 0px auto;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px 0px rgba(0, 4, 4, 0.25);
+    background: var.$primaryColor;
+    color: var.$whiteColor;
+    transition: 0.3s all;
+
+    &:hover {
+        background: var.$whiteColor02;
+        color: var.$primaryColor;
+    }
+    }
+
+    .m_btn__more {
+        position: relative;
+
+     &::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 6px;
+        border-right: 1px solid var.$whiteColor;
+        border-bottom: 1px solid var.$whiteColor;
+        position: absolute;
+        top: 50%; // m_btn__moreの中央基準
+        right: 16px; // m_btn__moreの右端からの距離
+        transform: translateY(-50%) skew(45deg) ;
+        transition: 0.3s all;
+    }}
+
+    .m_btn__tel {
+        position: relative;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 16px;
+            height: 16px;
+            background: url(../img/icon_insta_white.svg) no-repeat;
+            background-size: contain;
+            position: absolute;
+            left: 16px; // 左端からの距離
+            top: 50%; // ボタン中央に配置
+            transform: translateY(-50%); // 中央揃え
+            transition: 0.3s all;
+        }
+    }
+
+
+
+
+// -------------- js --------------//
+// -------------- top --------------//
+.top_section__title {
     font-size: 32px;
     font-weight: bold;
     color: var.$primaryColor;
@@ -167,45 +227,13 @@ body {
     }
 }
 
-.m_btn {
-    width: 297px;
-    height: 45px;
-    background: var.$primaryColor;
-    color: var.$whiteColor;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 4px 4px 0px rgba(0, 4, 4, 0.25);
+.top_btn__wrapper {
+    margin: 48px auto;
 
-    }
-
-    .m_btn__arrow {
-        position: relative;
-
-    &::after {
-        content: "";
-        width: 60px;
-        height: 6px;
-        border-bottom: solid 1px;
-        border-right: solid 1px;
-        transform: skew(45deg);
-        position: absolute;
-        right: 16px;
-    }
-
-    }
-
-    // .m_kv
-
-
-
-
-// -------------- js --------------//
-// -------------- top --------------//
+}
 // ********* top_kv ********* //
 .top_kv {
-    background: url("//src/img/bg_top.jpg") 72% center/cover;
+    background: linear-gradient(rgba(63, 46, 26, 0.47), rgba(63, 46, 26, 0.47)), url("../src/img/bg_top.jpg") 72% center/cover;
     height: 100vh;
     position: relative;
 
@@ -216,26 +244,110 @@ body {
         transform: translate(-50%, -50%);
     }
 
-    &__scroll--down {
-        position: absolute;
-        left: 50%;
-        right: 50%;
-        
-    &__scroll--arrow::after {
-        content: "";
-        width: 6px;
-        height: 6px;
-        border-bottom: 1px solid var.$whiteColor;
-        border-right: 1px solid var.$whiteColor;
-
-
+    &__copy {
+        color: var.$whiteColor;
     }
 
+    &__img {
+        max-width: 100%;
+        height: auto;
+
+        &--wrapper {
+            width: 343px;
+            height: 84px;
+        }
+    }
+
+    &__scroll--down {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: var.$whiteColor;
+        position: absolute;
+        left: 50%;
+        bottom: 16px;
+        transform: translateX(-50%)
+    }
+
+    &__scroll--arrow{
+        width: 6px;
+        height: 6px;
+        border-color: var.$whiteColor;
+        border-width: 1px;
+        border-style: none solid solid none;
+        transform: rotate(-45deg);
+        margin-top: 16px;
+}
 }
 
 // ********* top_concept ********* //
+.top_concept__copy {
+    font-size: 18px;
+    margin-top: 48px;
+}
+
+.top_concept__txt {
+    margin-top: 24px;
+}
 // ********* top_menu ********* //
+.top_menu {
+    background: var.$whiteColor02;
+
+    &__container {
+        margin-top: 48px;
+    }
+
+    &__img {
+        max-width: 100%;
+        height: auto;
+
+        &-wrapper {
+            width: 343px;
+            height: 229px;
+        }
+    }
+
+    &__txts {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 8px;
+        padding: 16px 32px;
+    }
+}
+
 // ********* top_news ********* //
+.top_news__wrapper {
+    margin-top: 48px;
+}
+
+.top_news__contents {
+    border-bottom: 1px solid var.$primaryColor;
+    padding: 8px 16px 24px;
+
+    &:first-child {
+        border-top: 1px solid var.$primaryColor;
+    }
+
+    &--date {
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+    &--category {
+        border: 1px solid var.$primaryColor;
+        border-radius: 5px;
+        padding: 2px 8px;
+    }
+
+    &--ttl {
+        font-weight: bold;
+    }
+}
+// ********* top_access ********* //
+.top_access__wrapper {
+    margin-top: 48px;
+}
+
 // ********* top_contact ********* //
 
 
