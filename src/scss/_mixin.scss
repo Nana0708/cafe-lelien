@@ -1,6 +1,6 @@
 
 $md: 768px;
-$bp: 1080px;
+$lg: 1080px;
 $xl: 1200px;
 
 
@@ -9,4 +9,10 @@ $xl: 1200px;
        @content;
     }
 }
+
+// style.scssで呼び出すとき
+
+// @include mix.mq(mix.$lg) {
+//     font-size: 20px;
+//     }
 

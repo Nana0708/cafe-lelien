@@ -36,10 +36,51 @@
 
 <body>
     <header class="l_header">
-        <!-- topページのが完成したらここに入れる -->
+            <h1 class="l_header-logo">
+                <a href="/index.html" class="l_header-logo_link">
+                    <div class="l_header-logo_img_wrapper">
+                        <img src="/src/img/logo.svg" alt="lelienのロゴ" width="146" height="72" class="l_header-logo_img">
+                    </div>
+                </a>
+            </h1>
+            <nav class="l_header-nav">
+                <ul class="l_header-nav__list">
+                    <li class="l_header-nav__item">
+                        <a href="index.html" class="l_header-nav__link">Top</a>
+                    </li>
+                    <li class="l_header-nav__item">
+                        <a href="index.html#concept" class="l_header-nav__link">Concept</a>
+                    </li>
+                    <li class="l_header-nav__item">
+                        <a href="menu.html" class="l_header-nav__link">Menu</a>
+                    </li>
+                    <li class="l_header-nav__item">
+                        <a href="news.html" class="l_header-nav__link">News</a>
+                    </li>
+                    <li class="l_header-nav__item">
+                        <a href="index.html#access" class="l_header-nav__link">Access</a>
+                    </li>
+                    <li class="l_header-nav__item">
+                        <a href="contact.html" class="l_header-nav__link">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="m_hamburger">
+                <span class="m_hamburger-bar"></span>
+                <span class="m_hamburger-bar"></span>
+                <span class="m_hamburger-bar"></span>
+              </button>
+        
  
     </header> 
     <div class="m_kv menu_kv">
+
+                <div class="m_kv__box">
+                    <p class="m_kv__copy">Menu</p>
+                </div>
+            </div>
+
+
 
  
     </div>
@@ -47,15 +88,175 @@
     <section class="menu_drink">
         <div class="l_container">
             <div class="l_contents">
-                <h2 class="menu_section_title">drink</h2>
+                <h2 class="menu_section__title">drink</h2>
+                <div class="menu_drink__wrapper">
+                    <div class="menu_drink__container--main">
+                        <div class="menu_drink__item--main">
+                            <div class="menu_drink__main--img-wrapper">
+                                <img src="/src/img/img_drink.jpg" alt="カフェラテ" width="662" height="458" class="menu_drink__main--img">
+                            </div>
+                            <div class="menu_drink__txts">
+                                <p class="menu_drink__txts--name">カフェラテ</p>
+                                <p class="menu_drink__txts--price">￥600</p>
+                            </div>
+                            <p class="menu_drink__txts--detail">
+                                厳選されたコーヒー豆を丁寧に抽出し、クリーミーなミルクと絶妙にブレンドした一杯。
+                            </p>
+                        </div>
+                        <div class="menu_drink__item--main">
+                            <div class="menu_drink__main--img-wrapper">
+                                <img src="/src/img/img_drink02.jpg" alt="ドリップコーヒー" width="662" height="458" class="menu_drink__main--img">
+                            </div>
+                            <div class="menu_drink__txts">
+                                <p class="menu_drink__txts--name">ドリップコーヒー</p>
+                                <p class="menu_drink__txts--price">￥500</p>
+                            </div>
+                            <p class="menu_drink__txts--detail">
+                                新鮮な豆を一杯ずつ丁寧にハンドドリップ。お湯の温度や注ぎ方にこだわり、豆本来の風味を最大限に引き出しました。
+                            </p>
+                        </div>
+                        <div class="menu_drink__item--main">
+                            <div class="menu_drink__main--img-wrapper">
+                                <img src="/src/img/img_drink03.jpg" alt="カフェモカ" width="662" height="458" class="menu_drink__main--img">
+                            </div>
+                            <div class="menu_drink__txts">
+                                <p class="menu_drink__txts--name">カフェモカ</p>
+                                <p class="menu_drink__txts--price">￥700</p>
+                            </div>
+                            <p class="menu_drink__txts--detail">
+                                チョコレートとエスプレッソの絶妙なハーモニーが楽しめる一杯。
+                            </p>
+                        </div>
+                    </div>
+<!-- サブメニュー -->
+                    <div class="menu_drink__container--sub">
+                        <div class="menu_drink__item--sub">
+                            <div class="menu_drink__sub--img-wrapper">
+                                <img src="/src/img/img_drink04.jpg" alt="ソイラテ" width="520" height="356" class="menu_drink__sub--img">
+                            </div>
+                            <div class="menu_drink__txts">
+                                <p class="menu_drink__txts--name">ソイラテ</p>
+                                <p class="menu_drink__txts--price">￥600</p>
+                            </div>
+                        </div>
+                        <div class="menu_drink__item--sub">
+                            <div class="menu_drink__sub--img-wrapper">
+                                <img src="/src/img/img_drink05.jpg" alt="マキアート" width="520" height="356" class="menu_drink__sub--img">
+                            </div>
+                            <div class="menu_drink__txts">
+                                <p class="menu_drink__txts--name">マキアート</p>
+                                <p class="menu_drink__txts--price">￥600</p>
+                            </div>
+                        </div>
+                        <div class="menu_drink__item--sub">
+                            <div class="menu_drink__sub--img-wrapper">
+                                <img src="/src/img/img_drink06.jpg" alt="ココア" width="520" height="356" class="menu_drink__sub--img">
+                            </div>
+                            <div class="menu_drink__txts">
+                                <p class="menu_drink__txts--name">ココア</p>
+                                <p class="menu_drink__txts--price">￥450</p>
+                            </div>
+                        </div>
+                        <div class="menu_drink__item--sub">
+                            <div class="menu_drink__sub--img-wrapper">
+                                <img src="/src/img/img_drink07.jpg" alt="りんごジュース" width="520" height="356" class="menu_drink__sub--img">
+                            </div>
+                            <div class="menu_drink__txts">
+                                <p class="menu_drink__txts--name">りんごジュース</p>
+                                <p class="menu_drink__txts--price">￥400</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>
+                </div>
             </div>
-        </div>
     </section>
 
     <section class="menu_food">
         <div class="l_container">
             <div class="l_contents">
-                <h2 class="menu_section_title">food</h2>
+                <h2 class="menu_section__title">food</h2>
+                <div class="menu_food__wrapper">
+                    <div class="menu_food__container--main">
+                        <div class="menu_food__item--main">
+                            <div class="menu_food__main--img-wrapper">
+                                <img src="/src/img/img_food.jpg" alt="メープルパンケーキ" width="662" height="458" class="menu_food__main--img">
+                            </div>
+                            <div class="menu_food__txts">
+                                <p class="menu_food__txts--name">メープルパンケーキ</p>
+                                <p class="menu_food__txts--price">￥1500</p>
+                            </div>
+                            <p class="menu_food__txts--detail">
+                                １枚１枚丁寧に焼き上げたふわふわなパンケーキ。メープルシロップをたっぷりかけてお召し上がりください。
+                            </p>
+                        </div>
+                        <div class="menu_food__item--main">
+                            <div class="menu_food__main--img-wrapper">
+                                <img src="/src/img/img_food02.jpg" alt="喫茶店のプリン" width="662" height="458" class="menu_food__main--img">
+                            </div>
+                            <div class="menu_food__txts">
+                                <p class="menu_food__txts--name">喫茶店のプリン</p>
+                                <p class="menu_food__txts--price">￥500</p>
+                            </div>
+                            <p class="menu_food__txts--detail">
+                                なめらかでとろけるような食感が魅力の自家製プリン。優しい甘さと濃厚なカスタードの風味が、どこか懐かしい味わいを届けます。
+                            </p>
+                        </div>
+                        <div class="menu_food__item--main">
+                            <div class="menu_food__main--img-wrapper">
+                                <img src="/src/img/img_food03.jpg" alt="季節のケーキセット" width="662" height="458" class="menu_food__main--img">
+                            </div>
+                            <div class="menu_food__txts">
+                                <p class="menu_food__txts--name">季節のケーキセット</p>
+                                <p class="menu_food__txts--price">￥900</p>
+                            </div>
+                            <p class="menu_food__txts--detail">
+                                季節のケーキとお好きなドリンクをセットで楽しめます
+                            </p>
+                        </div>
+                    </div>
+<!-- サブメニュー -->
+                    <div class="menu_drink__container--sub">
+                        <div class="menu_food__item--sub">
+                            <div class="menu_food__sub--img-wrapper">
+                                <img src="/src/img/img_food04.jpg" alt="和風きのこパスタ" width="520" height="358" class="menu_food__sub--img">
+                            </div>
+                            <div class="menu_food__txts">
+                                <p class="menu_food__txts--name">和風きのこパスタ</p>
+                                <p class="menu_food__txts--price">￥1000</p>
+                            </div>
+                        </div>
+                        <div class="menu_food__item--sub">
+                            <div class="menu_food__sub--img-wrapper">
+                                <img src="/src/img/img_food05.jpg" alt="こだわりカルボ" width="520" height="358" class="menu_food__sub--img">
+                            </div>
+                            <div class="menu_food__txts">
+                                <p class="menu_food__txts--name">こだわりカルボ</p>
+                                <p class="menu_food__txts--price">￥1200</p>
+                            </div>
+                        </div>
+                        <div class="menu_food__item--sub">
+                            <div class="menu_food__sub--img-wrapper">
+                                <img src="/src/img/img_food06.jpg" alt="チキンサンド" width="520" height="358" class="menu_food__sub--img">
+                            </div>
+                            <div class="menu_food__txts">
+                                <p class="menu_food__txts--name">チキンサンド</p>
+                                <p class="menu_food__txts--price">￥600</p>
+                            </div>
+                        </div>
+                        <div class="menu_food__item--sub">
+                            <div class="menu_food__sub--img-wrapper">
+                                <img src="/src/img/img_food07.jpg" alt="チーズバーガー" width="520" height="358" class="menu_food__sub--img">
+                            </div>
+                            <div class="menu_food__txts">
+                                <p class="menu_food__txts--name">チーズバーガー</p>
+                                <p class="menu_food__txts--price">￥1300</p>
+                            </div>
+                        </div>
+
+                
+                </div>
             </div>
         </div>
     </section>

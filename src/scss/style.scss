@@ -39,6 +39,7 @@ body {
 }
 
 
+
 // ********* header ********* //
 .l_header {
     height: 72px;
@@ -48,30 +49,60 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: var.$zIndexHeader;
 
     &-nav {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: var.$whiteColor; 
+        // position: fixed;
+        // top: 0;
+        // left: 0;
+        // right: 0;
+        // bottom: 0;
+        @include mix.mq(mix.$lg) {
+            position: static;
+            background: transparent;
+            width: auto;
+            height: auto;
+            opacity: 1;
+            pointer-events: inherit;
+    }
+
 
         &__list {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            font-size: 20px;
-            font-weight: bold;
+            // hamアクティブ時のスタイル
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            @include mix.mq(mix.$lg) {
+                display: flex;
+                gap: 0 48px;
+                position: static;
+                transform: none;
         }
+        @include mix.mq(mix.$md) {
+            display: flex;
+            gap: 0 24px;
+            position: static;
+            transform: none;
     }
+
+    }
+            &__item {
+                    text-align: center;
+                    font-size: 16px;
+                    font-weight: bold;
+            @include mix.mq(mix.$lg) {
+                color: var(--white-color);
+                height: 100%;
+                display: flex;
+                align-items: center;
+            }
+} 
+}
 }
 
 
@@ -99,6 +130,10 @@ body {
         height: 100%;
         color: var.$whiteColor;
         font-weight: bold;
+        @include mix.mq(mix.$lg) {
+            flex-direction: row;
+            gap: 48px;
+    }
     }
 }
 
@@ -121,9 +156,12 @@ body {
 // -------------- utility --------------//
 // -------------- module 使いまわしができるパーツ --------------//
 .m_hamburger {
-    width: 39px;
-    height: 26px;
+    width: 32px;
+    height: 28px;
     position: relative;
+    @include mix.mq(mix.$md) {
+        display: none;
+        }
 
     &-bar {
         width: 100%;
@@ -147,10 +185,8 @@ body {
             transform: translate(-50%, -100%);
         }
     }
+
 }
-
-
-
 
 .m_btn {
     width: 297px;
@@ -172,7 +208,6 @@ body {
         color: var.$primaryColor;
     }
     }
-
     .m_btn__more {
         position: relative;
 
@@ -208,6 +243,33 @@ body {
         }
     }
 
+    .menu_kv {
+        background: linear-gradient(rgba(63, 46, 26, 0.47), rgba(63, 46, 26, 0.47)), url("../src/img/bg_menu.jpg") 80% center/cover;
+
+    }
+
+    .m_kv {
+        height: 100%;
+    
+        &__box {
+            height: 320px;
+            position: relative;
+        }
+    
+        &__copy {
+            color: var.$whiteColor;
+            font-size: 32px;
+            font-weight: bold;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            @include mix.mq(mix.$lg) {
+                text-align: center;
+                font-size: 24px;
+        }
+    }
+    }
 
 
 
@@ -218,6 +280,9 @@ body {
     font-weight: bold;
     color: var.$primaryColor;
     position: relative;
+    @include mix.mq(mix.$md) {
+        text-align: center;
+    }
 
     &::after {
         content: "";
@@ -227,6 +292,10 @@ body {
         position: absolute;
         left: 0;
         bottom: -16px;
+        @include mix.mq(mix.$md) {
+            left: 50%;
+            transform: translateX(-50%);
+        }
     }
 }
 
@@ -249,6 +318,9 @@ body {
 
     &__copy {
         color: var.$whiteColor;
+        @include mix.mq(mix.$lg) {
+            text-align: center;
+            font-size: 24px;
     }
 
     &__img {
@@ -258,8 +330,14 @@ body {
         &--wrapper {
             width: 343px;
             height: 84px;
+            @include mix.mq(mix.$md) {
+                width: 793px;
+                height: 194px;
+            }
         }
     }
+}
+
 
     &__scroll--down {
         display: flex;
@@ -278,7 +356,7 @@ body {
         border-color: var.$whiteColor;
         border-width: 1px;
         border-style: none solid solid none;
-        transform: rotate(-45deg);
+        transform: rotate(45deg);
         margin-top: 16px;
 }
 }
@@ -287,10 +365,16 @@ body {
 .top_concept__copy {
     font-size: 18px;
     margin-top: 48px;
+    @include mix.mq(mix.$md) {
+        text-align: center;
+    }
 }
 
 .top_concept__txt {
     margin-top: 24px;
+    @include mix.mq(mix.$md) {
+        text-align: center;
+    }
 }
 // ********* top_menu ********* //
 .top_menu {
@@ -298,6 +382,17 @@ body {
 
     &__container {
         margin-top: 48px;
+        @include mix.mq(mix.$lg) {
+            display: flex;
+            justify-content: center;
+            gap: 36px;
+        }
+    }
+
+    &__box {
+        @include mix.mq(mix.$lg) {
+           width: calc(100% / 3);
+        }
     }
 
     &__img {
@@ -307,6 +402,9 @@ body {
         &-wrapper {
             width: 343px;
             height: 229px;
+            @include mix.mq(mix.$md) {
+                margin: 0 auto;
+             }
         }
     }
 
@@ -315,6 +413,10 @@ body {
         justify-content: space-between;
         margin-top: 8px;
         padding: 16px 32px;
+        @include mix.mq(mix.$md) {
+           justify-content: center;
+           gap: 60px;
+         }
     }
 }
 
@@ -326,6 +428,9 @@ body {
 .top_news__contents {
     border-bottom: 1px solid var.$primaryColor;
     padding: 8px 16px 24px;
+    @include mix.mq(mix.$lg) {
+        display: flex;
+    }
 
     &:first-child {
         border-top: 1px solid var.$primaryColor;
@@ -335,17 +440,55 @@ body {
     font-size: 12px;
     display: flex;
     justify-content: space-between;
+    @include mix.mq(mix.$lg) {
+    
+    }
 }
     &--category {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         border: 1px solid var.$primaryColor;
         border-radius: 5px;
         padding: 2px 8px;
+        @include mix.mq(mix.$lg) {
+            
+        }
     }
 
     &--ttl {
         font-weight: bold;
     }
 }
+
+    .top_news__link {
+        display: block;
+        position: relative;
+        text-align: right;
+        &::before {
+            content: "";
+            border: 1px solid var.$primaryColor;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            position: absolute;
+            right: 0;
+            bottom: 32px;
+        }
+
+        &::after {
+            content: "";
+            border-bottom: 1px solid var.$primaryColor;
+            border-right: 1px solid var.$primaryColor;
+            width: 8px;
+            height: 8px;
+            transform: rotate(-45deg);
+            position: absolute;
+            right: 5px;
+            bottom: 36px;
+        }
+    }
+
 // ********* top_access ********* //
 .top_access {
     background: var.$whiteColor02;
@@ -357,6 +500,13 @@ body {
     &__map--container {
         width: 343px;
         height: 252px;
+        @include mix.mq(mix.$md) {
+            margin: 0 auto;
+         }
+        @include mix.mq(mix.$lg) {
+            width: 100%;
+            height: 522px;
+         }
     
         & iframe {
             width: 100%;
@@ -376,17 +526,23 @@ body {
             width: 157px;
             height: 61px;
             margin: 0px auto;
+            @include mix.mq(mix.$lg) {
+                width: 370px;
+                height: 97px;
+                margin-bottom: 48px;
+        }
         }
     }
     &__table {
-        width: 100%;
-
+        width: auto;
+        margin: 0 auto;
+        border-collapse: collapse;
     }
 
-    &__tr-icon {
+    &__th-icon {
         width: 20px;
-        height: 20px;
         vertical-align: top;
+        padding-top: 24px;
 
         &--img {
             max-width: 100%;
@@ -396,10 +552,18 @@ body {
 
     &__td-date {
         font-size: 14px;
+        padding-top: 24px;
         padding-left: 24px;
+
+        @include mix.mq(mix.$lg) {
+            font-size: 20px;
+    }
 
         &--small {
             font-size: 12px;
+            @include mix.mq(mix.$lg) {
+                font-size: 16px;
+        }
         }
     }
 
@@ -407,32 +571,41 @@ body {
 
 
 // ********* top_contact ********* //
-.top_contact__wrapper {
-    margin-top: 48px;
+.top_contact {
+    &__wrapper {
+        margin-top: 48px;
+    }
+
+    &__txt {
+        @include mix.mq(mix.$md) {
+            text-align: center;
+         }
+         
+         &_btn__arrow {
+             position: relative;
+         
+          &::after {
+             content: "";
+             display: block;
+             width: 40px;
+             height: 6px;
+             border-right: 1px solid var.$whiteColor;
+             border-bottom: 1px solid var.$whiteColor;
+             position: absolute;
+             top: 50%; // m_btn__moreの中央基準
+             right: 16px; // m_btn__moreの右端からの距離
+             transform: translateY(-50%) skew(45deg) ;
+             transition: 0.3s all;
+         }}
+    }
 }
 
-.top_contact_btn__arrow {
-    position: relative;
-
- &::after {
-    content: "";
-    display: block;
-    width: 40px;
-    height: 6px;
-    border-right: 1px solid var.$whiteColor;
-    border-bottom: 1px solid var.$whiteColor;
-    position: absolute;
-    top: 50%; // m_btn__moreの中央基準
-    right: 16px; // m_btn__moreの右端からの距離
-    transform: translateY(-50%) skew(45deg) ;
-    transition: 0.3s all;
-}}
 
 
 
 
 // -------------- menu --------------//
-.menu_section_title {
+.menu_section__title {
     color: var.$primaryColor;
     font-size: 24px;
     font-weight: bold;
@@ -449,6 +622,34 @@ body {
         margin-left: 16px;
     }
 }
+
+// drink
+.menu_drink {
+    &__item--main:not(:first-of-type){
+        margin-top: 48px;
+    }
+    &__main--img-wrapper {
+        width: 343px;
+        height: 229px;
+    }
+    &__main--img {
+        width: 100%;
+        height: auto;
+    }
+    &menu_drink__txts {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 24px;
+        &--detail {
+            font-size: 14px;
+            margin-top: 16px;
+        }
+    }
+
+}
+
+//food
+
 
 
 
