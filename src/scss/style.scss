@@ -242,10 +242,9 @@ body {
             transition: 0.3s all;
         }
     }
-
+// ↓調整が終わったらmenuゾーンに移す
     .menu_kv {
         background: linear-gradient(rgba(63, 46, 26, 0.47), rgba(63, 46, 26, 0.47)), url("../src/img/bg_menu.jpg") 80% center/cover;
-
     }
 
     .m_kv {
@@ -266,7 +265,7 @@ body {
             transform: translate(-50%, -50%);
             @include mix.mq(mix.$lg) {
                 text-align: center;
-                font-size: 24px;
+                font-size: 40px;
         }
     }
     }
@@ -610,50 +609,124 @@ body {
     font-size: 24px;
     font-weight: bold;
     position: relative;
+    @include mix.mq(mix.$md) {
+        text-align: center;
+        font-size: 32px;
+     }
 
     &::after {
         content: "";
         // 100% - section_ttlの長さ
-        width: calc(100% - 87px);
+        width: 256px;
         height: 1px;
         background: var.$primaryColor;
         position: absolute;
+        right: 0;
         top: 50%;
         margin-left: 16px;
     }
+    &::before{
+    @include mix.mq(mix.$md) {
+        content: "";
+        // 100% - section_ttlの長さ
+        width: 256px;
+        height: 1px;
+        background: var.$primaryColor;
+        position: absolute;
+        left: 0;
+        top: 50%;
+     }
+    }
 }
 
-// drink
-.menu_drink {
-    &__item--main:not(:first-of-type){
+// メインメニュー
+.menu__box {
+    @include mix.mq(mix.$lg) {
+        display: flex;
+        justify-content: center;
+        gap: 48px;
+     }
+    &--item {
         margin-top: 48px;
+
     }
-    &__main--img-wrapper {
+    &--img-wrapper {
         width: 343px;
         height: 229px;
+        @include mix.mq(mix.$md) {
+            margin: 0 auto;
+         }
     }
-    &__main--img {
+    &--img {
         width: 100%;
         height: auto;
     }
-    &menu_drink__txts {
+    &--txts {
         display: flex;
         justify-content: space-between;
         margin-top: 24px;
-        &--detail {
+        padding: 0 16px;
+        @include mix.mq(mix.$md) {
+            justify-content: center;
+            gap: 48px;
+         }
+         @include mix.mq(mix.$lg) {
+            justify-content: space-between;
+         }
+        &-detail {
             font-size: 14px;
             margin-top: 16px;
+            padding: 0 16px;
+            @include mix.mq(mix.$md) {
+                text-align: center;
+             }
+             @include mix.mq(mix.$lg) {
+                text-align: left;
+             }
         }
     }
-
+}
+        // サブメニュー
+.menu__other-box{
+            display: flex;
+            gap: 20px 20px;
+            flex-wrap: wrap;
+            margin-top: 48px;
+            @include mix.mq(mix.$md) {
+                justify-content: center;
+                flex-wrap: nowrap;
+             }
+    &--img-wrapper {
+        width: 160px;
+        height: 116px;
+        @include mix.mq(mix.$lg) {
+            width: 260px;
+            height: 179px;
+         }
+    }
+    &--img {
+        width: 100%;
+        height: auto;
+    }
+    &--txts {
+        padding: 0 16px;
+        font-size: 14px;
+        &-name {
+            @include mix.mq(mix.$md) {
+                text-align-last: left;
+             }
+        }
+        &-price {
+            text-align: right;
+        }
+    }
 }
 
-//food
-
-
-
-
-
-
 // -------------- news --------------//
+.news_kv {
+    background: linear-gradient(rgba(63, 46, 26, 0.47), rgba(63, 46, 26, 0.47)), url("../src/img/bg_news.jpg") 80% center/cover;
+}
 // -------------- contact --------------//
+.contact_kv {
+    background: linear-gradient(rgba(63, 46, 26, 0.47), rgba(63, 46, 26, 0.47)), url("../src/img/bg_contact.jpg") 80% center/cover;
+}
