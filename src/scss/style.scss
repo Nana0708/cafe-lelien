@@ -54,6 +54,7 @@ body {
     left: 0;
     z-index: var.$zIndexHeader;
 
+
     &-nav {
         // position: fixed;
         // top: 0;
@@ -234,26 +235,26 @@ body {
         position: relative;
 
         &::after {
+            position: absolute;
+            top: 50%;
+            left: 60%;
+            transform: translate(-50%, -50%);
+            transform: translateY(-50%);
             content: "";
             display: block;
             width: 16px;
             height: 16px;
-            background: url(../img/icon_insta_white.svg) no-repeat;
+            background-image: url(/src/img/icon_tel_white.png);
+            background-color: var.$primaryColor;
+            background-position: center;
             background-size: contain;
-            position: absolute;
-            left: 16px; // 左端からの距離
-            top: 50%; // ボタン中央に配置
-            transform: translateY(-50%); // 中央揃え
-            transition: 0.3s all;
+
         }
-    }
-// ↓調整が終わったらmenuゾーンに移す
-    .menu_kv {
-        background: linear-gradient(rgba(63, 46, 26, 0.47), rgba(63, 46, 26, 0.47)), url("../src/img/bg_menu.jpg") 80% center/cover;
     }
 
     .m_kv {
-        height: 100%;
+        height: 320px;
+        margin-top: 72px;
     
         &__box {
             height: 320px;
@@ -278,6 +279,24 @@ body {
 
 
 // -------------- js --------------//
+.m_opening {
+    
+    background: var.$whiteColor;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: var.$zIndexModal;
+    display: flex;
+    &__txt {
+    text-align: center;
+    margin: auto;
+    font-size: 32px;
+    font-weight: bold;
+  }
+}
+
 // -------------- top --------------//
 .top_section__title {
     font-size: 32px;
@@ -326,20 +345,21 @@ body {
             text-align: center;
             font-size: 24px;
     }
+}
 
     &__img {
         max-width: 100%;
         height: auto;
+    }
 
-        &--wrapper {
+     &__img--wrapper {
             width: 343px;
             height: 84px;
-            @include mix.mq(mix.$md) {
+            @include mix.mq(mix.$lg) {
                 width: 793px;
                 height: 194px;
             }
-        }
-    }
+    
 }
 
 
@@ -381,6 +401,10 @@ body {
     }
 }
 // ********* top_menu ********* //
+.menu_kv {
+    background: linear-gradient(rgba(63, 46, 26, 0.47), rgba(63, 46, 26, 0.47)), url("../src/img/bg_menu.jpg") top/cover;
+
+}
 .top_menu {
     background: var.$whiteColor02;
 
@@ -426,7 +450,8 @@ body {
 
 // ********* top_news ********* //
 .top_news__wrapper {
-    margin-top: 48px;
+    max-width: 800px;
+    margin: 48px auto 0 auto;
 }
 
 .top_news__contents {
@@ -434,6 +459,9 @@ body {
     padding: 8px 16px 24px;
     @include mix.mq(mix.$lg) {
         display: flex;
+        position: relative;
+        vertical-align: top;
+        padding: 32px 0;
     }
 
     &:first-child {
@@ -443,10 +471,9 @@ body {
     &--date {
     font-size: 12px;
     display: flex;
-    justify-content: space-between;
-    @include mix.mq(mix.$lg) {
-    
-    }
+    margin-left: 32px;
+
+
 }
     &--category {
         display: flex;
@@ -456,40 +483,57 @@ body {
         border-radius: 5px;
         padding: 2px 8px;
         @include mix.mq(mix.$lg) {
-            
+            position: absolute;
+            left: 130px;
         }
     }
 
     &--ttl {
         font-weight: bold;
+        @include mix.mq(mix.$lg) {
+            position: absolute;
+            left: 300px;
+    }
     }
 }
 
+
     .top_news__link {
-        display: block;
-        position: relative;
-        text-align: right;
+        position: absolute;
+        right: 0;
+
         &::before {
+            display: none;
             content: "";
             border: 1px solid var.$primaryColor;
             border-radius: 50%;
-            width: 18px;
-            height: 18px;
-            position: absolute;
-            right: 0;
-            bottom: 32px;
+            width: 23px;
+            height: 23px;
+
+            @include mix.mq(mix.$lg) {
+                display: block;
+                position: absolute;
+                top: 50%;
+                right: 0;
+
+             }
         }
 
         &::after {
+            display: none;
             content: "";
             border-bottom: 1px solid var.$primaryColor;
             border-right: 1px solid var.$primaryColor;
-            width: 8px;
-            height: 8px;
+            width: 6px;
+            height: 6px;
             transform: rotate(-45deg);
-            position: absolute;
-            right: 5px;
-            bottom: 36px;
+
+            @include mix.mq(mix.$lg) {
+                display: block;
+                position: absolute;
+                top: 9px;
+                right: 9px;
+             }
         }
     }
 
@@ -729,7 +773,7 @@ body {
 
 // -------------- news --------------//
 .news_kv {
-    background: linear-gradient(rgba(63, 46, 26, 0.47), rgba(63, 46, 26, 0.47)), url("../src/img/bg_news.jpg") 80% center/cover;
+    background: linear-gradient(rgba(63, 46, 26, 0.47), rgba(63, 46, 26, 0.47)), url("../src/img/bg_news.jpg") 70% top/cover;
 }
 
 .news__list {
@@ -910,42 +954,55 @@ body {
     }
     }
 
-
 // -------------- contact --------------//
 .contact_kv {
     background: linear-gradient(rgba(63, 46, 26, 0.47), rgba(63, 46, 26, 0.47)), url("../src/img/bg_contact.jpg") 80% center/cover;
 }
 
-.contact_btn__wrapper {
+.contact_btn__wrapper-tel {
     margin-top: 24px;
 }
 
+.contact_form__btn-wrapper {
+    margin-top: 24px;
+    @include mix.mq(mix.$md) {
+        margin-top: 48px;
+     }
+}
+
 .contact_section__title {
+    margin-top: 32px;
     color: var.$primaryColor;
     font-size: 20px;
     font-weight: bold;
     position: relative;
     @include mix.mq(mix.$md) {
         text-align: center;
+     }
+    @include mix.mq(mix.$lg) {
         font-size: 32px;
      }
 
     &::after {
         content: "";
         // 100% - section_ttlの長さ
-        width: 101px;
+        width: 30%;
         height: 1px;
         background: var.$primaryColor;
         position: absolute;
         right: 0;
         top: 50%;
         margin-left: 16px;
+        @include mix.mq(mix.$md) {
+            width: 20%;
+    }
+
     }
     &::before{
     @include mix.mq(mix.$md) {
         content: "";
         // 100% - section_ttlの長さ
-        width: 256px;
+        width: 20%;
         height: 1px;
         background: var.$primaryColor;
         position: absolute;
@@ -958,12 +1015,130 @@ body {
 .contact {
     &__txt {
         font-size: 14px;
+        @include mix.mq(mix.$md) {
+            text-align: center;
+         }
     }
     &__form--box {
 
     &-txt {
+        margin-top: 24px;
         font-size: 14px;
-    }
-
+        @include mix.mq(mix.$md) {
+            text-align: center;
+         }
     }
 }
+    &_form {
+        margin-top: 24px;
+        &__heading {
+            position: relative;
+            font-weight: bold;
+            margin-top: 24px;
+        }
+        &__required{
+            font-weight: normal;
+            font-size: 10px;
+            color: var.$accentColor;
+            border: 1px solid var.$accentColor;
+            border-radius: 5px;
+            padding: 1px 3px;
+            margin-left: 10px;
+            font-family: Noto Sans JP;
+        }
+        &__example {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-weight: normal;
+            font-size: 12px;
+            color: var.$grayColor;
+            font-family: Noto Sans JP;
+        }
+        &__input {
+            width: 100%;
+            height: 43px;
+            border: 1px solid var.$primaryColor;
+            border-radius: 5px;
+            margin-top: 8px;
+        }
+        &__textarea {
+            width: 100%;
+            height: 223px;
+            border: 1px solid var.$primaryColor;
+            border-radius: 5px;
+            margin-top: 8px;
+            font-size: 14px;
+        }
+        &__checkbox {
+            appearance: checkbox;
+        }
+    }
+    &_privacy{
+        &__wrapper {
+            text-align: center;
+            margin-top: 24px;
+        }
+        &__txt {
+        color: var.$accentColor;
+        margin-top: 24px;
+        }
+        &__link {
+            text-decoration: underline;
+        }
+    }
+}
+// -------------- 404 --------------//
+.error {
+    background: var.$primaryColor;
+    &__txt--wrapper {
+        text-align: center;
+        margin-top: 48px;
+    }
+    &__txt {
+        color: var.$whiteColor;
+        font-size: 20px;
+        font-weight: bold;
+        &-sub {
+            color: var.$whiteColor;
+            font-weight: bold;
+            margin-top: 36px;
+        }
+    &__img-wrapper {
+        width: 343px;
+        height: 240px;
+    }
+    &__img {
+        width: 100%;
+        height: auto;
+    }
+    }
+}
+
+.error__wrapper {
+    margin-top: 48px;
+
+}
+
+.error__btn {
+    width: 297px;
+    height: 45px;
+    margin: 0px auto;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px 0px rgba(0, 4, 4, 0.25);
+    background: var.$whiteColor;
+    color: var.$primaryColor;
+    transition: 0.3s all;
+
+    &:hover {
+        background: var.$whiteColor02;
+        color: var.$whiteColor;
+    }
+    }
+
