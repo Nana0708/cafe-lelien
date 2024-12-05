@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   color: #000;
   background: #fff;
@@ -207,10 +208,18 @@ body {
   left: 0;
   z-index: 100;
 }
+.l_header-nav {
+  opacity: 0;
+  background: #fff; /* 背景色 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
 @media (min-width: 1080px) {
   .l_header-nav {
     position: static;
-    background: transparent;
     width: auto;
     height: auto;
     opacity: 1;
@@ -218,40 +227,39 @@ body {
   }
 }
 .l_header-nav__list {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: none;
 }
 @media (min-width: 1080px) {
   .l_header-nav__list {
-    display: flex;
-    gap: 0 48px;
-    position: static;
-    transform: none;
-  }
-}
-@media (min-width: 768px) {
-  .l_header-nav__list {
-    display: flex;
-    gap: 0 24px;
+    flex-direction: row;
     position: static;
     transform: none;
   }
 }
 .l_header-nav__item {
   text-align: center;
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 24px;
+  text-align: left;
 }
 @media (min-width: 1080px) {
   .l_header-nav__item {
-    color: var(--white-color);
-    height: 100%;
-    display: flex;
-    align-items: center;
+    color: #3F2E1A;
+    font-size: 16px;
+    font-weight: bold;
   }
+}
+.l_header-nav__link {
+  transition: 0.3s all;
+}
+.l_header-nav__link:hover {
+  opacity: 70%;
+  text-decoration: underline;
 }
 
 .l_footer {
@@ -305,7 +313,7 @@ body {
   height: 28px;
   position: relative;
 }
-@media (min-width: 768px) {
+@media (min-width: 1080px) {
   .m_hamburger {
     display: none;
   }
@@ -424,6 +432,27 @@ body {
   margin: auto;
   font-size: 32px;
   font-weight: bold;
+}
+
+.js_hamburger.is-active .m_hamburger-bar:first-child {
+  top: 50%;
+  transform: translate(-50%, 0) rotate(45deg);
+}
+.js_hamburger.is-active .m_hamburger-bar:nth-child(2) {
+  opacity: 0;
+}
+.js_hamburger.is-active .m_hamburger-bar:last-child {
+  top: 50%;
+  transform: translate(-50%, 0) rotate(-45deg);
+}
+
+.js_body.is-active {
+  overflow: hidden;
+}
+
+.js_nav.is-active {
+  opacity: 1;
+  pointer-events: inherit;
 }
 
 .top_section__title {

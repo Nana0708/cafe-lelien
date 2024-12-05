@@ -15,6 +15,17 @@
 //   });
 
 // -------------- ハンバーガー --------------//
+const hamburger = document.querySelector(".js_hamburger");
+const navigation = document.querySelector(".js_nav");
+const body = document.querySelector(".js_body");
+
+hamburger.addEventListener("click", () => {
+
+hamburger.classList.toggle("is-active");
+navigation.classList.toggle("is-active");
+body.classList.toggle("is-active");
+});
+
 // -------------- 各ページkvのアニメーション --------------//
 
   gsap.from(".js_m_kv__copy", {

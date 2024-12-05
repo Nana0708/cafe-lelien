@@ -56,14 +56,21 @@ body {
 
 
     &-nav {
-        // position: fixed;
         // top: 0;
         // left: 0;
-        // right: 0;
-        // bottom: 0;
+        // position: absolute;
+        // width: 100%;
+        // transition: opacity 0.5s ease;
+        // height: 100vh; /* 画面全体 */
+        opacity: 0;
+        background: var.$whiteColor; /* 背景色 */
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
         @include mix.mq(mix.$lg) {
             position: static;
-            background: transparent;
             width: auto;
             height: auto;
             opacity: 1;
@@ -72,37 +79,39 @@ body {
 
 
         &__list {
-            // hamアクティブ時のスタイル
+        // hamアクティブ時のスタイル
+            display: flex;
+            gap: 16px;
+            flex-direction: column;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            display: none;
             @include mix.mq(mix.$lg) {
-                display: flex;
-                gap: 0 48px;
+                // background: transparent;
+                flex-direction: row;
                 position: static;
                 transform: none;
         }
-        @include mix.mq(mix.$md) {
-            display: flex;
-            gap: 0 24px;
-            position: static;
-            transform: none;
-    }
-
     }
             &__item {
                     text-align: center;
-                    font-size: 16px;
-                    font-weight: bold;
+                    font-size: 24px;
+                    // font-weight: bold;
+                    text-align: left;
             @include mix.mq(mix.$lg) {
-                color: var(--white-color);
-                height: 100%;
-                display: flex;
-                align-items: center;
+                color: var.$primaryColor;
+                font-size: 16px;
+                font-weight: bold;
             }
 } 
+            &__link {
+                transition: 0.3s all;
+                &:hover {
+                    opacity: 70%;
+                    text-decoration: underline;
+                }
+            }
 }
 }
 
@@ -165,7 +174,7 @@ body {
     width: 32px;
     height: 28px;
     position: relative;
-    @include mix.mq(mix.$md) {
+    @include mix.mq(mix.$lg) {
         display: none;
         }
 
@@ -295,6 +304,32 @@ body {
     font-size: 32px;
     font-weight: bold;
   }
+}
+
+
+.js_hamburger.is-active .m_hamburger-bar{
+    &:first-child {
+        top: 50%;
+        transform: translate(-50%, 0) rotate(45deg);
+      }
+    &:nth-child(2) {
+        opacity: 0;
+      }
+    
+    &:last-child{
+        top: 50%;
+        transform: translate(-50%, 0) rotate(-45deg);
+      }
+}
+
+.js_body.is-active {
+    overflow: hidden;
+}
+
+.js_nav.is-active {
+        opacity: 1;
+        // display: block;
+        pointer-events: inherit;
 }
 
 // -------------- top --------------//
