@@ -18,6 +18,7 @@
 const hamburger = document.querySelector(".js_hamburger");
 const navigation = document.querySelector(".js_nav");
 const body = document.querySelector(".js_body");
+const navigationLink = document.querySelectorAll(".js_nav a");
 
 hamburger.addEventListener("click", () => {
 
@@ -25,6 +26,22 @@ hamburger.classList.toggle("is-active");
 navigation.classList.toggle("is-active");
 body.classList.toggle("is-active");
 });
+
+// ページ内リンクをクリックしたらメニューを閉じる＆スムーススクロール
+navigationLink.forEach(link => {
+  link.addEventListener("click", event => {
+    event.preventDefault(); // デフォルトのジャンプ動作を無効化
+
+    // メニューを閉じる
+    hamburger.classList.remove("is-active");
+    navigation.classList.remove("is-active");
+    body.classList.remove("is-active");
+
+
+});
+});
+
+
 
 // -------------- 各ページkvのアニメーション --------------//
 
@@ -52,8 +69,7 @@ gsap.from(".js_top-concept",{
 scrollTrigger: {
     trigger: ".js_top-concept__trigger",
     start: "top 80%",
-  
-    markers: true,
+
   },
   stagger: {
     each: 0.6,
@@ -73,7 +89,6 @@ scrollTrigger: {
     trigger: ".js_top-menu__trigger",
     start: "top 80%",
   
-    markers: true,
   },
   stagger: {
     each: 0.6,
@@ -92,7 +107,7 @@ scrollTrigger: {
     trigger: ".js_top-news__trigger",
     start: "top 80%",
   
-    markers: true,
+
   },
   stagger: {
     each: 0.6,
@@ -111,7 +126,7 @@ scrollTrigger: {
     trigger: ".js_top-access__trigger",
     start: "top 80%",
   
-    markers: true,
+
   },
   stagger: {
     each: 0.6,
@@ -130,7 +145,7 @@ scrollTrigger: {
     trigger: ".js_top-contact__trigger",
     start: "top center",
   
-    markers: true,
+
   },
   stagger: {
     each: 0.6,
@@ -153,7 +168,6 @@ scrollTrigger: {
     trigger: ".js_menu_drink__trigger",
     start: "top 80%",
   
-    markers: true,
   },
   stagger: {
     each: 0.6,
@@ -172,7 +186,6 @@ scrollTrigger: {
     trigger: ".js_menu_food__trigger",
     start: "top 80%",
   
-    markers: true,
   },
   stagger: {
     each: 0.6,
@@ -193,7 +206,6 @@ scrollTrigger: {
     trigger: ".js_news_trigger",
     start: "top 80%",
   
-    markers: true,
   },
   stagger: {
     each: 0.6,
@@ -211,8 +223,7 @@ gsap.from(".js_single",{
 scrollTrigger: {
     trigger: ".js_single__trigger",
     start: "top 80%",
-  
-    markers: true,
+
   },
   stagger: {
     each: 0.6,
@@ -232,7 +243,6 @@ scrollTrigger: {
     trigger: ".js_contact__trigger",
     start: "top 80%",
   
-    markers: true,
   },
   stagger: {
     each: 0.6,

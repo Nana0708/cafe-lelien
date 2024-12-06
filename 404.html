@@ -1,110 +1,92 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Lelien</title>
-    <meta
-      name="description"
-      content="Lelienは、伝統の味わいと現代的な挑戦を融合させた、安らぎの空間を提供するカフェです"
-    />
-    <meta name="format-detection" content="telephone=no" />
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Lelien</title>
+<meta name="description" content="Lelienは、伝統の味わいと現代的な挑戦を融合させた、安らぎの空間を提供するカフェです" />
+<meta name="format-detection" content="telephone=no" />
 
-    <!-- favicon/web-clip-icon -->
-    <link rel="icon" href="favicon.ico" type="image/ico" />
-    <link rel="icon" href="favicon.png" type="image/png" />
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="webclip.png" />
+<!-- favicon/web-clip-icon -->
+<link rel="icon" href="/src/img/favicon.ico" type="image/ico" />
+<link rel="icon" href="/src/img/favicon.ico" type="image/png" />
+<link rel="icon" href="/src/img/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="webclip.png" />
 
-    <!-- ogp -->
-    <meta property="og:site_name" content="Lelien" />
-    <meta property="og:url" content="サイトのURL（絶対パス）" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Lelien" />
-    <meta
-      property="og:description"
-      content="Lelienは、伝統の味わいと現代的な挑戦を融合させた、安らぎの空間を提供するカフェです"
-    />
-    <meta
-      property="og:image"
-      content="OGP画像のURL（絶対ぱす）推奨サイズは1200*630"
-    />
-    <meta property="og:locale" content="ja_JP" />
-    <meta property="fb:app_id" content="AppID" />
+ <!-- ogp -->
+<meta property="og:site_name" content="Lelien" />
+<meta property="og:url" content="サイトのURL（絶対パス）" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Lelien" />
+<meta property="og:description" content="Lelienは、伝統の味わいと現代的な挑戦を融合させた、安らぎの空間を提供するカフェです" />
+<meta property="og:image" content="OGP画像のURL（絶対ぱす）推奨サイズは1200*630" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="fb:app_id" content="AppID">
 
-    <!-- google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap"
-      rel="stylesheet"
-    />
+ <!-- google fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
 
-    <!-- css -->
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/style.css" />
+ <!-- css -->
+<link rel="stylesheet" href="css/reset.css" />
+<link rel="stylesheet" href="css/style.css" />
 
-    <!-- js -->
+<!-- js -->
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 <script src="/src/js/main.js" defer></script>
 
-  </head>
-  <body>
-    <header class="l_header">
-        <h1 class="l_header-logo">
-          <a href="/index.html" class="l_header-logo_link">
+</head>
+<body class="js_body">
+   <header class="l_header">
+    <h1 class="l_header-logo">
+        <a href="/index.html" class="l_header-logo_link">
             <div class="l_header-logo_img_wrapper">
-              <img
-                src="/src/img/logo.svg"
-                alt="lelienのロゴ"
-                width="146"
-                height="72"
-                class="l_header-logo_img"
-              />
+                <img src="/src/img/logo.svg" alt="lelienのロゴ" width="146" height="72" class="l_header-logo_img">
             </div>
-          </a>
-        </h1>
-        <nav class="l_header-nav">
-          <ul class="l_header-nav__list">
+        </a>
+    </h1>
+    <nav class="l_header-nav js_nav">
+        <ul class="l_header-nav__list">
             <li class="l_header-nav__item">
-              <a href="index.html" class="l_header-nav__link">Top</a>
+                <a href="index.html" class="l_header-nav__link">Top</a>
             </li>
             <li class="l_header-nav__item">
-              <a href="index.html#concept" class="l_header-nav__link">Concept</a>
+                <a href="index.html#concept" class="l_header-nav__link">Concept</a>
             </li>
             <li class="l_header-nav__item">
-              <a href="menu.html" class="l_header-nav__link">Menu</a>
+                <a href="menu.html" class="l_header-nav__link">Menu</a>
             </li>
             <li class="l_header-nav__item">
-              <a href="news.html" class="l_header-nav__link">News</a>
+                <a href="news.html" class="l_header-nav__link">News</a>
             </li>
             <li class="l_header-nav__item">
-              <a href="index.html#access" class="l_header-nav__link">Access</a>
+                <a href="index.html#access" class="l_header-nav__link">Access</a>
             </li>
             <li class="l_header-nav__item">
-              <a href="contact.html" class="l_header-nav__link">Contact</a>
+                <a href="contact.html" class="l_header-nav__link">Contact</a>
             </li>
-          </ul>
-        </nav>
-        <button class="m_hamburger">
-          <span class="m_hamburger-bar"></span>
-          <span class="m_hamburger-bar"></span>
-          <span class="m_hamburger-bar"></span>
-        </button>
-      </header>
+        </ul>
+    </nav>
+    <button class="m_hamburger js_hamburger">
+        <span class="m_hamburger-bar"></span>
+        <span class="m_hamburger-bar"></span>
+        <span class="m_hamburger-bar"></span>
+      </button>
 
-      <main class="main">
+   </header>
+      <main class="l_main">
         <div class="l_container error">
             <div class="l_contents">
                 <div class="error__wrapper">
                     <div class="error__txt--wrapper">
                         <h2 class="error__txt">
                             お探しのページが
-                            <br class="u_lg_dn">見つかりませんでした。
+                            <br class="u_lg-dn">見つかりませんでした。
                         </h2>
                         <p class="error__txt-sub">
-                            リンクに問題があるか、<br class="u_lg_dn">
+                            リンクに問題があるか、<br class="u_lg-dn">
                             ページが削除された可能性があります。
                         </p>
                     </div>
@@ -113,10 +95,51 @@
                     </div>
 
                     <div class="error__btn-wrapper">
-                        <a href="/news.html" class="error__btn m_btn__more">TOPに戻る</a>
+                        <a href="index.html" class="error__btn m_btn__more">TOPに戻る</a>
                     </div>
                 </div>
             </div>
         </div>
       </main>
+      <footer class="l_footer">
+        <div class="l_footer-logo">
+            <a href="/index.html" class="l_footer-logo__link">
+                <div class="l_footer-logo__img--wrapper">
+                    <img src="/src/img/logo_white.svg" alt="lelienのロゴ" width="200" height="75" class="l_footer-logo__img">
+                </div>
+            </a>
+        </div>
+        <div class="l_footer-nav">
+            <ul class="l_footer-nav__list">
+                <li class="l_footer-nav__item">
+                    <a href="index.html" class="l_footer-nav__link">Top</a>
+                </li>
+                <li class="l_footer-nav__item">
+                    <a href="index.html#concept" class="l_footer-nav__link">Concept</a>
+                </li>
+                <li class="l_footer-nav__item">
+                    <a href="menu.html" class="l_footer-nav__link">Menu</a>
+                </li>
+                <li class="l_footer-nav__item">
+                    <a href="news.html" class="l_footer-nav__link">News</a>
+                </li>
+                <li class="l_footer-nav__item">
+                    <a href="index.html#access" class="l_footer-nav__link">Access</a>
+                </li>
+                <li class="l_footer-nav__item">
+                    <a href="contact.html" class="l_footer-nav__link">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <div class="l_footer-icon__img--wrapper">
+            <a href="/404.html" class="l_footer-icon__link"><img src="/src/img/icon_insta_white.svg" alt="インスタグラムのアイコン" class="l_footer-icon__img"></a>
+        </div>
+    
+        <div class="l_footer-cr">
+            <p class="l_footer-cr__txt">
+                &copy; 2024 LeLien.
+            </p>
+        </div>
+       </footer>
   </body>
+</html>

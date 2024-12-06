@@ -8,9 +8,9 @@
 <meta name="format-detection" content="telephone=no" />
 
 <!-- favicon/web-clip-icon -->
-<link rel="icon" href="favicon.ico" type="image/ico" />
-<link rel="icon" href="favicon.png" type="image/png" />
-<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/src/img/favicon.ico" type="image/ico" />
+<link rel="icon" href="/src/img/favicon.ico" type="image/png" />
+<link rel="icon" href="/src/img/favicon.svg" type="image/svg+xml" />
 <link rel="apple-touch-icon" href="webclip.png" />
 
  <!-- ogp -->
@@ -38,7 +38,54 @@
 <script src="/src/js/main.js" defer></script>
 
 </head>
-<body>
+<!-- <div class="m_opening js_opening">
+    <div class="m_opening__txt js_opening__txt">
+      <p class="m_opening__heading">Lelien</p>
+      <p class="m_opening__desc">
+        since 2024
+      </p>
+    </div>
+</div> -->
+
+<body class="js_body">
+   <header class="l_header">
+    <h1 class="l_header-logo">
+        <a href="/index.html" class="l_header-logo_link">
+            <div class="l_header-logo_img_wrapper">
+                <img src="/src/img/logo.svg" alt="lelienのロゴ" width="146" height="72" class="l_header-logo_img">
+            </div>
+        </a>
+    </h1>
+    <nav class="l_header-nav js_nav">
+        <ul class="l_header-nav__list">
+            <li class="l_header-nav__item">
+                <a href="index.html" class="l_header-nav__link">Top</a>
+            </li>
+            <li class="l_header-nav__item">
+                <a href="index.html#concept" class="l_header-nav__link">Concept</a>
+            </li>
+            <li class="l_header-nav__item">
+                <a href="menu.html" class="l_header-nav__link">Menu</a>
+            </li>
+            <li class="l_header-nav__item">
+                <a href="news.html" class="l_header-nav__link">News</a>
+            </li>
+            <li class="l_header-nav__item">
+                <a href="index.html#access" class="l_header-nav__link">Access</a>
+            </li>
+            <li class="l_header-nav__item">
+                <a href="contact.html" class="l_header-nav__link">Contact</a>
+            </li>
+        </ul>
+    </nav>
+    <button class="m_hamburger js_hamburger">
+        <span class="m_hamburger-bar"></span>
+        <span class="m_hamburger-bar"></span>
+        <span class="m_hamburger-bar"></span>
+      </button>
+
+   </header>
+
     <div class="l_contents js_single">
         <div class="l_container-sm js_single__trigger">
                 <article class="single__article">
@@ -90,4 +137,45 @@
                 </div>
         </div>
     </div>
+    <footer class="l_footer">
+        <div class="l_footer-logo">
+            <a href="/index.html" class="l_footer-logo__link">
+                <div class="l_footer-logo__img--wrapper">
+                    <img src="/src/img/logo_white.svg" alt="lelienのロゴ" width="200" height="75" class="l_footer-logo__img">
+                </div>
+            </a>
+        </div>
+        <div class="l_footer-nav">
+            <ul class="l_footer-nav__list">
+                <li class="l_footer-nav__item">
+                    <a href="index.html" class="l_footer-nav__link">Top</a>
+                </li>
+                <li class="l_footer-nav__item">
+                    <a href="index.html#concept" class="l_footer-nav__link">Concept</a>
+                </li>
+                <li class="l_footer-nav__item">
+                    <a href="menu.html" class="l_footer-nav__link">Menu</a>
+                </li>
+                <li class="l_footer-nav__item">
+                    <a href="news.html" class="l_footer-nav__link">News</a>
+                </li>
+                <li class="l_footer-nav__item">
+                    <a href="index.html#access" class="l_footer-nav__link">Access</a>
+                </li>
+                <li class="l_footer-nav__item">
+                    <a href="contact.html" class="l_footer-nav__link">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <div class="l_footer-icon__img--wrapper">
+            <a href="/404.html" class="l_footer-icon__link"><img src="/src/img/icon_insta_white.svg" alt="インスタグラムのアイコン" class="l_footer-icon__img"></a>
+        </div>
+    
+        <div class="l_footer-cr">
+            <p class="l_footer-cr__txt">
+                &copy; 2024 LeLien.
+            </p>
+        </div>
+       </footer>
 </body>
+</html>

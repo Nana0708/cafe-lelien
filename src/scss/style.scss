@@ -62,7 +62,8 @@ body {
         // width: 100%;
         // transition: opacity 0.5s ease;
         // height: 100vh; /* 画面全体 */
-        opacity: 0;
+        // opacity: 0;
+        display: none;
         background: var.$whiteColor; /* 背景色 */
         position: fixed;
         top: 0;
@@ -70,6 +71,7 @@ body {
         right: 0;
         bottom: 0;
         @include mix.mq(mix.$lg) {
+            display: block;
             position: static;
             width: auto;
             height: auto;
@@ -77,6 +79,7 @@ body {
             pointer-events: inherit;
     }
 
+    
 
         &__list {
         // hamアクティブ時のスタイル
@@ -88,10 +91,10 @@ body {
             left: 50%;
             transform: translate(-50%, -50%);
             @include mix.mq(mix.$lg) {
-                // background: transparent;
                 flex-direction: row;
                 position: static;
                 transform: none;
+                gap: 48px;
         }
     }
             &__item {
@@ -145,6 +148,13 @@ body {
             gap: 48px;
     }
     }
+    &__link {
+        transition: 0.3s all;
+        &:hover {
+            opacity: 70%;
+            text-decoration: underline;
+        }
+    }
 }
 
 &-icon__img--wrapper {
@@ -183,6 +193,8 @@ body {
         height: 2px;
         background: var.$primaryColor;
         position: absolute;
+        transition: all 0.3s ease;
+
 
         &:first-child {
             top: 0;
@@ -250,16 +262,40 @@ body {
             transform: translate(-50%, -50%);
             transform: translateY(-50%);
             content: "";
-            display: block;
+            display: inline-block;
             width: 16px;
             height: 16px;
             background-image: url(/src/img/icon_tel_white.png);
-            background-color: var.$primaryColor;
             background-position: center;
             background-size: contain;
-
+            transition: 0.3s all;
         }
-    }
+        &:hover::after {
+            content: "";
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background-image: url(/src/img/icon_tel.png);
+            background-color: var(--white-color02);
+            transition: 0.3s all;
+          }
+        // &::after:hover {
+        //     position: absolute;
+        //     top: 50%;
+        //     left: 60%;
+        //     transform: translate(-50%, -50%);
+        //     transform: translateY(-50%);
+        //     content: "";
+        //     display: block;
+        //     width: 16px;
+        //     height: 16px;
+        //     background-image: url(/src/img/icon_tel.png);
+        //     background-color: var.$whiteColor;
+        //     background-position: center;
+        //     background-size: contain;
+        // }
+}
+
 
     .m_kv {
         height: 320px;
@@ -327,8 +363,7 @@ body {
 }
 
 .js_nav.is-active {
-        opacity: 1;
-        // display: block;
+        display: block;
         pointer-events: inherit;
 }
 
@@ -491,24 +526,22 @@ body {
 
 .top_news__contents {
     border-bottom: 1px solid var.$primaryColor;
-    padding: 8px 16px 24px;
+    padding: 10px 16px 24px;
     @include mix.mq(mix.$lg) {
         display: flex;
         position: relative;
         vertical-align: top;
         padding: 32px 0;
     }
-
     &:first-child {
         border-top: 1px solid var.$primaryColor;
     }
-
     &--date {
+    display: flex;
+    justify-content: space-between;
     font-size: 12px;
     display: flex;
-    margin-left: 32px;
-
-
+    // margin-left: 32px;
 }
     &--category {
         display: flex;
@@ -522,12 +555,14 @@ body {
             left: 130px;
         }
     }
-
     &--ttl {
         font-weight: bold;
+        margin-top: 8px;
         @include mix.mq(mix.$lg) {
             position: absolute;
             left: 300px;
+            font-weight: normal;
+            margin-top: 0;
     }
     }
 }
@@ -590,7 +625,6 @@ body {
             width: 100%;
             height: 522px;
          }
-    
         & iframe {
             width: 100%;
             height: 100%;
@@ -604,7 +638,6 @@ body {
     &__logo-img {
         max-width: 100%;
         height: auto;
-
         &--wrapper {
             width: 157px;
             height: 61px;
@@ -622,24 +655,28 @@ body {
         border-collapse: collapse;
     }
 
+    &__tr {
+        vertical-align: top;
+    }
+
     &__th-icon {
         width: 20px;
-        vertical-align: top;
-        padding-top: 24px;
-
-        &--img {
-            max-width: 100%;
-            height: auto;
-        }
+        height: 20px;
+        padding-top: 20px;
+        @include mix.mq(mix.$lg) {
+            width: 25px;
+            height: 25px;
+            padding-top: 54px;
+    }
     }
 
     &__td-date {
         font-size: 14px;
         padding-top: 24px;
         padding-left: 24px;
-
         @include mix.mq(mix.$lg) {
             font-size: 20px;
+            padding-top: 48px;
     }
 
         &--small {
@@ -839,6 +876,14 @@ body {
     &--ttl {
         font-weight: bold;
         margin-top: 16px;
+    }
+    &--link {
+        text-decoration: none;
+        transition: 0.3 all;
+        cursor: pointer;
+        &:hover {
+            opacity: 70%;
+        }
     }
     &--summary {
         font-size: 14px;
