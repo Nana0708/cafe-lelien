@@ -1174,7 +1174,11 @@ body {
     background: var.$primaryColor;
     &__txt--wrapper {
         text-align: center;
-        margin-top: 48px;
+        margin-top: 40px;
+    }
+    &__container {
+        margin: 0 auto;
+        padding: 0 16px;
     }
     &__txt {
         color: var.$whiteColor;
@@ -1183,22 +1187,22 @@ body {
         &-sub {
             color: var.$whiteColor;
             font-weight: bold;
-            margin-top: 36px;
+            margin-top: 30px;
         }
+    }
     &__img-wrapper {
         width: 343px;
         height: 240px;
+        margin: 48px auto 0px;
     }
     &__img {
-        width: 100%;
-        height: auto;
+        max-width: 100%;
     }
     }
-}
 
-.error__wrapper {
-    margin-top: 48px;
 
+.error__btn-wrapper {
+    margin-top: 20px;
 }
 
 .error__btn {

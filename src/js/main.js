@@ -1,18 +1,18 @@
 // -------------- オープニングアニメーション --------------/
-// 読み込んだらtxtが入ってくる
-// gsap.from(".js_opening__txt", {
-//     duration: 1.2,
-//     autoAlpha: 0,
-//     y: 40,
-//   });
+読み込んだらtxtが入ってくる
+gsap.from(".js_opening__txt", {
+    duration: 1.2,
+    autoAlpha: 0,
+    y: 40,
+  });
 
-// // openingが消える
-//   gsap.to(".js_opening", {
-//     autoAlpha: 0,
-//     duration: 0.6,
-//   		//1.2秒の遅延
-//     delay: 1.5,
-//   });
+// openingが消える
+  gsap.to(".js_opening", {
+    autoAlpha: 0,
+    duration: 0.6,
+  		//1.2秒の遅延
+    delay: 1.5,
+  });
 
 // -------------- ハンバーガー --------------//
 const hamburger = document.querySelector(".js_hamburger");
@@ -27,19 +27,33 @@ navigation.classList.toggle("is-active");
 body.classList.toggle("is-active");
 });
 
-// ページ内リンクをクリックしたらメニューを閉じる＆スムーススクロール
-navigationLink.forEach(link => {
+ // ページ内リンクと外部リンクの処理を分ける
+ navigationLink.forEach(link => {
   link.addEventListener("click", event => {
-    event.preventDefault(); // デフォルトのジャンプ動作を無効化
+    const href = link.getAttribute("href");
+
+      // ページ内リンクの場合の処理
+      if (href.startsWith("#")) {
+        event.preventDefault();
 
     // メニューを閉じる
     hamburger.classList.remove("is-active");
     navigation.classList.remove("is-active");
     body.classList.remove("is-active");
 
-
-});
-});
+        // スムーススクロール
+        const targetElement = document.querySelector(href);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        } else {
+          console.error("ターゲット要素が見つかりません:", href);
+        }
+      }
+    })
+  })
 
 
 
@@ -249,10 +263,3 @@ scrollTrigger: {
     from: "start",
   },
 });
-
-
-
-// -------------- ハンバーガー --------------//
-
-// -------------- ハンバーガー --------------//
-// -------------- ハンバーガー --------------//
