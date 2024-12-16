@@ -56,13 +56,6 @@ body {
 
 
     &-nav {
-        // top: 0;
-        // left: 0;
-        // position: absolute;
-        // width: 100%;
-        // transition: opacity 0.5s ease;
-        // height: 100vh; /* 画面全体 */
-        // opacity: 0;
         display: none;
         background: var.$whiteColor; /* 背景色 */
         position: fixed;
@@ -78,9 +71,6 @@ body {
             opacity: 1;
             pointer-events: inherit;
     }
-
-    
-
         &__list {
         // hamアクティブ時のスタイル
             display: flex;
@@ -97,6 +87,7 @@ body {
                 gap: 48px;
         }
     }
+
             &__item {
                     text-align: center;
                     font-size: 24px;
@@ -279,21 +270,6 @@ body {
             background-color: var(--white-color02);
             transition: 0.3s all;
           }
-        // &::after:hover {
-        //     position: absolute;
-        //     top: 50%;
-        //     left: 60%;
-        //     transform: translate(-50%, -50%);
-        //     transform: translateY(-50%);
-        //     content: "";
-        //     display: block;
-        //     width: 16px;
-        //     height: 16px;
-        //     background-image: url(/src/img/icon_tel.png);
-        //     background-color: var.$whiteColor;
-        //     background-position: center;
-        //     background-size: contain;
-        // }
 }
 
 
@@ -1226,3 +1202,93 @@ body {
     }
     }
 
+// -------------- privacy --------------//
+
+    .privacy{
+    &_section__title {
+        text-align: center;
+        color: var.$primaryColor;
+        font-size: 24px;
+        font-weight: bold;
+        position: relative;
+        @include mix.mq(mix.$md) {
+            font-size: 32px;
+         } 
+        &::after {
+            content: "";
+                width: 60px;
+                height: 1px;
+                background: var.$primaryColor;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                margin-left: 16px;
+                @include mix.mq(mix.$md) {
+                    width: 200px;
+                 }
+                 @include mix.mq(mix.$lg) {
+                    width: 256px;
+                 }
+        }
+        &::before{
+            content: "";
+            width: 60px;
+            height: 1px;
+            background: var.$primaryColor;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            @include mix.mq(mix.$md) {
+                width: 200px;
+             }
+            @include mix.mq(mix.$lg) {
+                width: 256px;
+             }
+        }
+    }
+    &_wrapper {
+        @include mix.mq(mix.$md) {
+            padding: 0 80px;
+         }
+    }
+    &_box {
+        margin-top: 30px;
+        &__title {
+        color: var.$primaryColor;
+        font-size: 20px;
+        font-weight: bold;
+        position: relative;
+        @include mix.mq(mix.$md) {
+            text-align: center;
+            font-size: 24px;
+         }
+        &::after {
+            content: "";
+            @include mix.mq(mix.$md) {
+                width: 300px;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 1px;
+                background: var.$primaryColor;
+                position: absolute;
+                bottom: 5px;
+             }
+        }
+    }
+    &__txt {
+        @include mix.mq(mix.$md) {
+            margin-top: 16px;
+         }
+    }
+    &__list {
+        margin-top: 8px;
+    }
+    &__item {
+        list-style: decimal;
+        margin-left: 24px;
+    }
+    &__list--access {
+        margin-top: 8px;
+    }
+}
+    }
